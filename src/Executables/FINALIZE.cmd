@@ -45,6 +45,8 @@ PowerShell -NonInteractive -NoLogo -NoP -C "& {$tmp = (New-TemporaryFile).FullNa
 del /q /f "%SYSTEMDRIVE%\Windows\System32\drivers\etc\hosts"
 copy /y "hosts" "%SYSTEMDRIVE%\Windows\System32\drivers\etc\hosts"
 
+start "" "C:\Windows\explorer.exe"
+
 start "" "C:\Windows\Resources\Themes\dark.theme" & timeout /t 3 & taskkill /im "systemsettings.exe" /f
 
 @REM echo Configuring UAC...
