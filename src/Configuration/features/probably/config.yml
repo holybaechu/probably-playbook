@@ -17,6 +17,8 @@ actions:
   - !run: {exe: 'powercfg', args: '-setacvalueindex scheme_current sub_processor PERFINCTHRESHOLD 10', showOutput: false, showError: false}
   - !run: {exe: 'powercfg', args: '-setacvalueindex scheme_current sub_processor PERFDECTHRESHOLD 8', showOutput: false, showError: false}
   - !run: {exe: 'powercfg', args: '/setactive scheme_current', showOutput: false, showError: false}
+  - !run: {exe: 'powercfg', args: '-change -monitor-timeout-ac 0', showOutput: false, showError: false}
+  - !run: {exe: 'powercfg', args: '-change -monitor-timeout-dc 0', showOutput: false, showError: false}
   - !run: {exe: 'schtasks', args: '/change /tn "\Microsoft\Windows\Power Efficiency Diagnostics\AnalyzeSystem" /disable', showOutput: false}
   - !run: {exe: 'schtasks', args: '/change /tn "\Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents" /disable', showOutput: false}
   - !run: {exe: 'schtasks', args: '/change /tn "\Microsoft\Windows\MemoryDiagnostic\RunFullMemoryDiagnostic" /disable', showOutput: false}
