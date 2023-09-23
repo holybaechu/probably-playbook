@@ -5,4 +5,4 @@ privilege: TrustedInstaller
 actions: []
 features:
   - features\probably\registry\Disable-featured-software.yml
-  - feautres\probably\registry\configure-start-menu-and-taskbar.yml
+  - features\probably\registry\configure-start-menu-and-taskbar.yml
