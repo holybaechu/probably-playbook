@@ -1,0 +1,46 @@
+---
+title: Components
+description: Remove certain windows components
+privilege: TrustedInstaller
+actions:
+  - !service:
+    name: "wuauserv"
+    operation: stop
+
+  - !taskKill: {name: "explorer"}
+
+  - !writeStatus: {status: "Removing components"}
+
+    # OneDrive
+  - !writeStatus: {status: "Removing OneDrive"}
+  - !taskKill: {name: "OneDriveStandaloneUpdater"}
+  - !taskKill: {name: "OneDriveSetup"}
+  - !taskKill: {name: "OneDrive*"}
+
+  - !cmd: {command: '%windir%\System32\OneDriveSetup.exe /uninstall'}
+  - !cmd: {command: '%windir%\SysWOW64\OneDriveSetup.exe /uninstall'}
+
+  - !file: {path: "%windir%\\System32\\OneDriveSetup.exe"}
+  - !file: {path: "%windir%\\SysWOW64\\OneDriveSetup.exe"}
+  - !file: {path: "%windir%\\SysWOW64\\OneDriveSettingSyncProvider.dll"}
+  - !file: {path: "%SystemDrive%\\OneDriveTemp"}
+  - !file: {path: "%ProgramData%\\Microsoft OneDrive"}
+
+  - !run: {exeDir: true, exe: "ONED.cmd", weight: 20}
+  
+    # Update Health Tools
+  - !cmd: {command: 'msiexec /X{43D501A5-E5E3-46EC-8F33-9E15D2A2CBD5} /qn /norestart'}
+  - !registryKey: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\UpdateHealthTools'}
+  - !registryKey: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\rempl'}
+  - !registryKey: {path: 'HKLM\SOFTWARE\Microsoft\CloudManagedUpdate'}
+
+  - !file: {path: "%ProgramW6432%\\Microsoft Update Health Tools"}
+  
+    # PC Health Check
+  - !cmd: {command: 'msiexec /X{804A0628-543B-4984-896C-F58BF6A54832} /qn /norestart'}
+  - !file: {path: "%ProgramW6432%\\PCHealthCheck"}
+
+    #  Windows Installation Assistant
+  - !cmd: {command: '"%ProgramFiles(x86)%\WindowsInstallationAssistant\Windows10UpgraderApp.exe" /SunValley /ForceUninstall', weight: 10}
+
+  # - !run: {exe: "explorer.exe", wait: false}

@@ -1,0 +1,6 @@
+---
+title: Disable-featured-software
+description: Disable-featured-software
+privilege: TrustedInstaller
+actions:
+  - !registryValue: { path: 'HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU', value: 'EnableFeaturedSoftware', operation: delete }

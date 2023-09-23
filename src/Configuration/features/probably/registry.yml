@@ -1,0 +1,7 @@
+---
+title: Registry
+description: Revision registry configuration
+privilege: TrustedInstaller
+actions: []
+features:
+  - features\probably\registry\Disable-featured-software.yml

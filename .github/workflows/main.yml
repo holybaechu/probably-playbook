@@ -1,0 +1,21 @@
+name: Archive and Release
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Archive content
+        run: |
+          7z a -pmalte -mhe=on ./release.apbx ./src/*
+      
+      - name: Upload to action artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-unzip-please
+          path: ./release.apbx
