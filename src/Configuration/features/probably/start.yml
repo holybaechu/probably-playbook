@@ -4,6 +4,11 @@ description: Copies Revision folders/files, and configures some initial settings
 privilege: TrustedInstaller
 actions:
 
+  - !run:
+    exeDir: true
+    exe: 'THEME.cmd'
+    weight: 20
+
     # Prevent notifications during installing playbook
   - !registryValue:
     path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.SecurityAndMaintenance'
