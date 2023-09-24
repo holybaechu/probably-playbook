@@ -50,6 +50,14 @@ actions:
   - !registryValue: {path: 'HKCU\Software\Policies\Microsoft\Windows\Explorer', value: 'NoBalloonFeatureAdvertisements', type: REG_DWORD, data: '1'}
     # === Turn off notification area cleanup - Enabled
   - !registryValue: {path: 'HKCU\Software\Policies\Microsoft\Windows\Explorer', value: 'NoAutoTrayNotify', type: REG_DWORD, data: '1'}
+    # === Turn off Chat icon
+  - !registryValue: {path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced', value: "TaskbarMn", type: REG_DWORD, data: '0'}
+    # === Turn off Widget icon
+  - !registryValue: {path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced', value: "TaskbarDa", type: REG_DWORD, data: '0'}
+    # === Turn off Taskview icon
+  - !registryValue: {path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced', value: "ShowTaskViewButton", type: REG_DWORD, data: '0'}
+    # === Turn off Search bar/icon
+  - !registryValue: {path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Search', value: "SearchboxTaskbarMode", type: REG_DWORD, data: '0'}
     # === Turn off user tracking - Enabled
     # ------> Can be found in (Configure_Privacy.reg)
     # [HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
