@@ -16,14 +16,14 @@ wget "https://discordapp.com/api/download/canary?platform=win" -O "DiscordCanary
 start /wait DiscordCanary.exe --silent
 
 @REM Node.js
-start /wait choco install -y -f nodejs-lts
+start /wait C:\ProgramData\chocolatey\bin\choco.exe install -y -f nodejs-lts
 @REM Jetbrains Toolbox
-start /wait choco install -y -f jetbrainstoolbox
+start /wait C:\ProgramData\chocolatey\bin\choco.exe install -y -f jetbrainstoolbox
 @REM Jetbrains PhpStorm
-start /wait choco install -y -f phpstorm
+start /wait C:\ProgramData\chocolatey\bin\choco.exe install -y -f phpstorm
 @REM Honeyview
-start /wait choco install -y -f honeyview.install
+start /wait C:\ProgramData\chocolatey\bin\choco.exe install -y -f honeyview.install
 @REM Bandizip
-start /wait choco install -y -f bandizip
+start /wait C:\ProgramData\chocolatey\bin\choco.exe install -y -f bandizip
 @REM WizTree
-start /wait choco install -y -f wiztree
+start /wait C:\ProgramData\chocolatey\bin\choco.exe install -y -f wiztree
