@@ -11,5 +11,6 @@ TIMEOUT /T 1
 GOTO :search
 
 :found
+TIMEOUT 10
 wget "https://github.com/Vencord/Installer/releases/latest/download/VencordInstallerCli.exe" -O "VencordInstallerCli.exe"
 start /wait VencordInstallerCli.exe -branch canary -install
