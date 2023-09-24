@@ -13,4 +13,4 @@ choco install jetbrainstoolbox -y --force
 choco install phpstorm -y --force
 
 @REM Discord Canary + Vencord
-start /wait INSTALL-DISCORD-CANARY-WITH-VENCORD.cmd
+INSTALL-DISCORD-CANARY-WITH-VENCORD.cmd

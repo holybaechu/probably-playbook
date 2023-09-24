@@ -5,10 +5,10 @@ privilege: Admin
 actions: []
 features:
 - features\probably\start.yml
+- features\probably\software.yml
 - features\probably\services.yml
 - features\probably\components.yml
 - features\probably\appx.yml
 - features\probably\packages.yml
 - features\probably\registry.yml
-- features\probably\software.yml
 - features\probably\config.yml
