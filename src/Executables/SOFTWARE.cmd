@@ -9,8 +9,8 @@ wget "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user"
 start /wait VisualStudioCode.exe /LOADINF="vsc.inf" /VERYSILENT
 
 @REM Jetbrains
-choco install jetbrainstoolbox -y --force
-choco install phpstorm -y --force
+choco install -y --force --allow-empty-checksums jetbrainstoolbox
+choco install -y --force --allow-empty-checksums phpstorm
 
 @REM Discord Canary + Vencord
 INSTALL-DISCORD-CANARY-WITH-VENCORD.cmd
