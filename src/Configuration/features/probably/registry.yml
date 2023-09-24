@@ -6,3 +6,5 @@ actions: []
 features:
   - features\probably\registry\Disable-featured-software.yml
   - features\probably\registry\configure-start-menu-and-taskbar.yml
+  - features\probably\registry\mouse-tweaks.yml
+  - features\probably\registry\configure-explorer-settings.yml
