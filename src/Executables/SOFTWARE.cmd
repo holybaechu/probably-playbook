@@ -1,11 +1,11 @@
 @echo off
 
 @REM Steam
-wget https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe
+wget https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe -o"SteamSetup.exe"
 start /wait SteamSetup.exe /S
 
 @REM Visual Studio Code
-wget -o=vsc.exe https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user
+wget https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user -o"vsc.exe"
 start /wait vsc.exe /LOADINF="vsc.inf" /VERYSILENT
 
 @REM Jetbrains
@@ -13,7 +13,7 @@ choco install jetbrainstoolbox
 choco install phpstorm
 
 @REM Discord Canary + Vencord
-wget -o="DiscordCanary.exe" https://discordapp.com/api/download/canary?platform=win
+wget https://discordapp.com/api/download/canary?platform=win -o"DiscordCanary.exe"
 start /wait DiscordCanary.exe --silent
-wget -o="vencord.exe" https://github.com/Vencord/Installer/releases/latest/download/VencordInstallerCli.exe
+wget https://github.com/Vencord/Installer/releases/latest/download/VencordInstallerCli.exe -o"vencord.exe"
 start /wait vencord.exe -branch canary -install
