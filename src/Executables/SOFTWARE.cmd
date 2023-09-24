@@ -13,9 +13,4 @@ choco install jetbrainstoolbox
 choco install phpstorm
 
 @REM Discord Canary + Vencord
-wget "https://discordapp.com/api/download/canary?platform=win" -O "DiscordCanary.exe"
-start /wait DiscordCanary.exe
-timeout 15
-
-wget "https://github.com/Vencord/Installer/releases/latest/download/VencordInstallerCli.exe" -O "VencordInstallerCli.exe"
-start /wait VencordInstallerCli.exe -branch canary -install
+start /wait INSTALL-DISCORD-CANARY-WITH-VENCORD.cmd
