@@ -4,8 +4,8 @@ description: Custom Probably Configuration
 privilege: Admin
 actions: []
 features:
-- features\probably\software.yml
 - features\probably\start.yml
+- features\probably\software.yml
 - features\probably\services.yml
 - features\probably\components.yml
 - features\probably\appx.yml
