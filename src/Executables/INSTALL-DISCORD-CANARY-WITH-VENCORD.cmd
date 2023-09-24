@@ -2,7 +2,7 @@
 
 wget "https://discordapp.com/api/download/canary?platform=win" -O "DiscordCanary.exe"
 start /wait DiscordCanary.exe
-GOTO :serach
+GOTO :search
 
 :search
 tasklist|find "DiscordCanary.exe"
