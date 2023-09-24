@@ -42,7 +42,8 @@ for /f "usebackq tokens=2 delims=\" %%a in (`reg query "HKEY_USERS" ^| findstr /
 
 PowerShell -NonInteractive -NoLogo -NoP -C "& {$tmp = (New-TemporaryFile).FullName; CertUtil -generateSSTFromWU -f $tmp; if ( (Get-Item $tmp | Measure-Object -Property Length -Sum).sum -gt 0 ) { $SST_File = Get-ChildItem -Path $tmp; $SST_File | Import-Certificate -CertStoreLocation "Cert:\LocalMachine\Root"; $SST_File | Import-Certificate -CertStoreLocation "Cert:\LocalMachine\AuthRoot" } Remove-Item -Path $tmp}" >NUL 2>nul del /q /f "%SYSTEMDRIVE%\Windows\System32\drivers\etc\hosts"
 copy /y "hosts" "%SYSTEMDRIVE%\Windows\System32\drivers\etc\hosts"
-xcopy /y "Desktop" "%USERPROFILE%\Desktop\Probably"
+
+move "Desktop" "%USERPROFILE%\Desktop\Probably"
 
 @REM for /f "tokens=3*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA"') do (
 @REM     if %%i==0x1 (
