@@ -12,6 +12,7 @@ actions:
     command: '"%ProgramData%\chocolatey\bin\choco.exe" install -y --force --allow-empty-checksums dotnet3.5'
     weight: 150
 
+  - !writeStatus: {status: "Installing Other programs"}
   - !run:
     exeDir: true
     exe: 'SOFTWARE.cmd'
